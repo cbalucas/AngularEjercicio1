@@ -1,0 +1,25 @@
+<div class="toolbar" role="banner">
+  <h2>Ejercicio Santex CLASE ANGULAR</h2>
+</div>
+
+<!--QUISE COLOCAR MODELOS DIVERSOS DE BOTONES COMO COLORES Y NO SE PORQUE NO ME LO TOMA.
+SI PUEDEN DESPUES DIGANME CUAL ES EL ERROR. GRACIAS
+-->
+<div class ="container">
+  <button mat-flat-button color="primary" (click)="verProductos()">Ver de Productos</button>
+</div>
+
+<div>
+  <tr *ngIf="verLista===false">
+    <table border="2">
+      <tr>
+        <th>Nombre</th>
+        <th>Costo</th>
+      </tr>
+      <tr *ngFor="let producto of tablaProductos; let impar=odd;let par = even;" [ngClass]="{azul:par,verde:impar}">
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.costo}}</td>
+      </tr>
+    </table>
+  </tr>
+</div>
